@@ -15,6 +15,7 @@ public class OrderedIntStreamImpl implements OrderedIntStream {
 			result = stream[position];
 			position++;
 		}
+		if(result == -1) throw new IndexOutOfBoundsException("You ran off the road!");
 		return result;
 	}
 

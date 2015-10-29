@@ -1,2 +1,2 @@
 Implement the MergedOrderedIntStream so that you can pass it multiple OrderedInputStreams with duplicate or overlapping values and it will return the next lowest integer using all streams as the data.
-The driver code is in the single test class. Assume the OrderedInputStream can contain millions of integers so loading all the data into memory is not a valid solution. The correct soltion streams the data.
+The driver code is in the single test class. Assume the OrderedInputStream can contain millions of integers so loading all the data into memory is not a valid solution. The correct solution streams the data.
