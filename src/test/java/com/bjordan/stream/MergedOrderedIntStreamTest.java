@@ -65,12 +65,23 @@ public class MergedOrderedIntStreamTest {
 	@Test
 	public void mergedSpotCheck() {
 		List<Integer> mergedResults = new ArrayList();
-		while(merged.hasNext())
+		while(merged.hasNext()) {
 			mergedResults.add(merged.next());
+		}
 
 		assertThat(mergedResults.contains(50)).isTrue();
 		assertThat(mergedResults.contains(40)).isTrue();
 		assertThat(mergedResults.contains(21)).isTrue();
 		assertThat(mergedResults.contains(1)).isTrue();
+	}
+
+	@Test
+	public void streamIsOrdered() {
+		int prev = merged.next();
+		while(merged.hasNext()) {
+			int current = merged.next();
+			assertThat(prev).isLessThanOrEqualTo(current);
+			prev = current;
+		}
 	}
 }

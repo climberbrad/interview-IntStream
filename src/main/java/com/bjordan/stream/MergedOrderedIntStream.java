@@ -9,10 +9,12 @@ public class MergedOrderedIntStream implements OrderedIntStream {
 		this.streams = streams;
 	}
 
+	@Override
 	public int next() {
 		return 0;
 	}
 
+	@Override
 	public boolean hasNext() {
 		return false;
 	}
