@@ -54,8 +54,11 @@ public class MergedOrderedIntStreamTest {
 	@Test
 	public void mergedStreamContainsCorrectCount() {
 		int count = 0;
-		while(merged.hasNext()) count++;
-		
+		while(merged.hasNext()) {
+			merged.next();
+			count++;
+		}
+
 		assertThat(count).isEqualTo(MERGED_STREAM_LEN);
 	}
 
